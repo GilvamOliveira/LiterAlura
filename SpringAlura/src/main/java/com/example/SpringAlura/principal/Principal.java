@@ -1,6 +1,6 @@
 package com.example.SpringAlura.principal;
 
-import com.example.SpringAlura.servic.ConsumoAPI;
+import com.example.SpringAlura.service.ConsumoAPI;
 import com.example.SpringAlura.service.ConverteDados;
 import com.example.SpringAlura.repository.LivroRepository;
 import com.example.SpringAlura.repository.AutorRepository;
