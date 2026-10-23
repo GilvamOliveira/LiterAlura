@@ -50,3 +50,23 @@ Integração com banco de dados relacional
 
 Estruturação de aplicações backend com Spring BooT
 
+------
+
+*Configuração*
+
+As credenciais não ficam no código. Defina as variáveis de ambiente antes de executar:
+
+DB_URL (opcional, padrão: jdbc:postgresql://localhost:5432/SpringAlura)
+
+DB_USERNAME (obrigatória)
+
+DB_PASSWORD (obrigatória)
+
+Exemplo no PowerShell:
+
+$env:DB_USERNAME="postgres"
+
+$env:DB_PASSWORD="sua-senha"
+
+mvn spring-boot:run
+
