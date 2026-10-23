@@ -1,32 +1,22 @@
 package com.example.SpringAlura.principal;
 
-import com.example.SpringAlura.service.ConsumoAPI;
-import com.example.SpringAlura.service.ConverteDados;
-import com.example.SpringAlura.repository.LivroRepository;
-import com.example.SpringAlura.repository.AutorRepository;
+import com.example.SpringAlura.service.LivroService;
 
 import java.util.Scanner;
 
 public class Principal {
 
-    private final ConsumoAPI consumoAPI;
-    private final ConverteDados converteDados;
-    private final LivroRepository livroRepository;
-    private final AutorRepository autorRepository;
+    private final LivroService livroService;
 
-    public Principal(ConsumoAPI consumoAPI, ConverteDados converteDados,
-                     LivroRepository livroRepository, AutorRepository autorRepository) {
-        this.consumoAPI = consumoAPI;
-        this.converteDados = converteDados;
-        this.livroRepository = livroRepository;
-        this.autorRepository = autorRepository;
+    public Principal(LivroService livroService) {
+        this.livroService = livroService;
     }
 
     public void exibeMenu() {
         Scanner scanner = new Scanner(System.in);
         int opcao = -1;
 
-        while(opcao != 0) {
+        while (opcao != 0) {
             System.out.println("\n1 - Buscar livro pelo título");
             System.out.println("2 - Listar livros registrados");
             System.out.println("3 - Listar autores");
@@ -35,37 +25,35 @@ public class Principal {
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
-            if(scanner.hasNextInt()) {
+            if (scanner.hasNextInt()) {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // limpa o buffer
+                scanner.nextLine();
             } else {
                 System.out.println("Opção inválida!");
                 scanner.nextLine();
                 continue;
             }
 
-            switch(opcao) {
+            switch (opcao) {
                 case 1:
-                    System.out.print("Digite o nome do livro: ");
-                    String titulo = scanner.nextLine();
-                    consumoAPI.buscarLivroPorTitulo(titulo);
+                    livroService.buscarLivro();
                     break;
                 case 2:
-                    consumoAPI.listarLivros();
+                    livroService.listarLivros();
                     break;
                 case 3:
-                    consumoAPI.listarAutores();
+                    livroService.listarAutores();
                     break;
                 case 4:
                     System.out.print("Digite o ano: ");
                     int ano = scanner.nextInt();
                     scanner.nextLine();
-                    consumoAPI.autoresVivosNoAno(ano);
+                    livroService.autoresVivosNoAno(ano);
                     break;
                 case 5:
                     System.out.print("Digite o idioma: ");
                     String idioma = scanner.nextLine();
-                    consumoAPI.livrosPorIdioma(idioma);
+                    livroService.livrosPorIdioma(idioma);
                     break;
                 case 0:
                     System.out.println("Saindo...");

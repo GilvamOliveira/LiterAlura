@@ -8,6 +8,8 @@ O LiterAlura é um catálogo de livros que consome dados da API pública Gutende
 
 Este projeto foi desenvolvido como desafio prático dentro da formação ONE - Oracle Next Education, reforçando habilidades essenciais para desenvolvimento backend com Java e Spring.
 
+[![CI](https://github.com/GilvamOliveira/LiterAlura/actions/workflows/ci.yml/badge.svg)](https://github.com/GilvamOliveira/LiterAlura/actions/workflows/ci.yml)
+
 -------
 
 *Funcionalidades*
@@ -48,7 +50,7 @@ Persistência de dados com JPA
 
 Integração com banco de dados relacional
 
-Estruturação de aplicações backend com Spring BooT
+Estruturação de aplicações backend com Spring Boot
 
 ------
 
@@ -69,6 +71,10 @@ $env:DB_USERNAME="postgres"
 $env:DB_PASSWORD="sua-senha"
 
 mvn spring-boot:run
+
+O menu interativo é opcional e fica desativado por padrão para não bloquear testes e execuções em segundo plano. Para habilitá-lo:
+
+mvn spring-boot:run -Dspring-boot.run.arguments=--app.menu.enabled=true
 
 ---
 
