@@ -70,3 +70,6 @@ $env:DB_PASSWORD="sua-senha"
 
 mvn spring-boot:run
 
+---
+
+Autor: Gilvam Oliveira · [LinkedIn](https://www.linkedin.com/in/gilvam-oliveira/) · [GitHub](https://github.com/GilvamOliveira)
